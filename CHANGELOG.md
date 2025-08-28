@@ -4,6 +4,13 @@
 
 * add test file for semantic release testing ([f343378](https://github.com/noyoliel-devocean/test-semantic-release/commit/f3433780790583de0dc38e816363680cac1dd7df))
 * initial commit with npm init and semantic-release setup ([173881b](https://github.com/noyoliel-devocean/test-semantic-release/commit/173881b8592b1d0243e1b9288c7597623e2bda0b))
+
+## 1.0.0 (2025-08-28)
+
+### Features
+
+* add test file for semantic release testing ([f343378](https://github.com/noyoliel-devocean/test-semantic-release/commit/f3433780790583de0dc38e816363680cac1dd7df))
+* initial commit with npm init and semantic-release setup ([173881b](https://github.com/noyoliel-devocean/test-semantic-release/commit/173881b8592b1d0243e1b9288c7597623e2bda0b))
 * update for commit 10 with version bump ([b4969d5](https://github.com/noyoliel-devocean/test-semantic-release/commit/b4969d58f2ec91ab9e8bf59fa55040a078c660e1))
 * update for commit 4 with version bump ([13e39c1](https://github.com/noyoliel-devocean/test-semantic-release/commit/13e39c16b9f8aedcfb01e8880f9ec90bb751b105))
 * update for commit 5 with version bump ([bb1e028](https://github.com/noyoliel-devocean/test-semantic-release/commit/bb1e028f74dcde686b6129a4dd29067545923a13))
