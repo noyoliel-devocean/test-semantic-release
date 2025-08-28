@@ -1,0 +1,2 @@
+This is a test file for semantic release debugging.
+Initial content for commit #2.
