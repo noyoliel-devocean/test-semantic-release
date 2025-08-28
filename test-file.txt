@@ -1,6 +1,6 @@
 This is a test file for semantic release debugging.
 Initial content for commit #2.
 
-Commit #3 - 2025-08-28T07:33:56.500Z
-Type: fix
-Version: 1.0.1
+Commit #4 - 2025-08-28T07:33:56.696Z
+Type: feat
+Version: 1.1.0
