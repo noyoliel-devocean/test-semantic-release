@@ -1,6 +1,6 @@
 This is a test file for semantic release debugging.
 Initial content for commit #2.
 
-Commit #16 - 2025-08-28T10:48:03.033Z
-Type: feat
-Version: 1.5.0
+Commit #17 - 2025-08-28T10:48:03.143Z
+Type: chore
+No version update
