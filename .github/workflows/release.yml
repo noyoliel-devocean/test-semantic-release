@@ -1,0 +1,66 @@
+name: Version Release
+
+# Trigger on push to main and dev branches for testing
+on:
+  push:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+# Ensure only one release can run at a time
+concurrency: 
+  group: ${{ github.workflow }}-${{ github.ref_name }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      packages: write
+      security-events: write
+      actions: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.16.0'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Debug Git History and Tags
+        run: |
+          echo "Current branch HEAD:"
+          git log -1 --pretty=format:"%h %s"
+
+          echo "--- Tags in repository (all branches) ---"
+          git tag --list
+
+          echo "--- Tags reachable from current HEAD ---"
+          # This command shows all tags that are ancestors of the current HEAD
+          git log --decorate=full --simplify-by-decoration --pretty=oneline | grep "tag:" || echo "No tags found"
+
+          echo "--- Current branch ---"
+          git branch --show-current
+
+          echo "--- Recent commit history ---"
+          git log --oneline -10
+        shell: bash
+
+      - name: Release
+        env:
+          HUSKY: 0
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_ENV: production
+        run: npm run release -- --debug
